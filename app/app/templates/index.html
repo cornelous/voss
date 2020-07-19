@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head|>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <script>
+        $(document).ready(function(){
+          $("#currencies").change(function(){
+            let base =   $(this).val();
+            let url = "currencies?base=" + base + "&target=ZAR";
+
+            $.ajax({url: url, success: function(result){
+              $("#zaramount").val(result);
+            },
+            });
+          });
+        });
+        </script>
+<body>
+
+<h1>ZAR Currency converter</h1>
+  <label for="currencies">Select a currency to get the ZAR equivalent:</label>
+  <select name="currencies" id="currencies">
+    <option value="EUR">EUR</option>
+    <option value="GBP">GBP</option>
+    <option value="USD">USD</option>
+  </select>
+  <br><br>
+
+  <label for="zaramount">ZAR equivalent:</label>
+  <input type="text" id="zaramount" name="zaramount" value="" readonly><br><br>
+</body>
+</html>
