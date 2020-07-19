@@ -25,6 +25,5 @@ def route_currencies():
     r = ZAREquivalent.json()
 
     targetEquiv = r["rates"].get(target)
-    # app.logger.debug("Converted " + base + " to " + target + " and " + target + " value was " + str(targetEquiv) )
+    app.logger.debug("Converted " + base + " to " + target + " and " + target + " value was " + str(targetEquiv) )
     return jsonify(targetEquiv)
-    # return "Clive"
