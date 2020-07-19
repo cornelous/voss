@@ -4,11 +4,25 @@ A currency converter as a fulfilment for a tech assessment.
 
 ## Installation Process - nix based
 
-1. git clone https://github.com/cornelous/voss.git
-2. Open a terminal and run
-3. docker build -t currency-converter-image .
-4. docker run -d --name currency-converter-container -p 80:80 currency-converter-image
-5. Visit app at http://127.0.0.1/
+1. Open a terminal and run
+
+```bash
+    git clone https://github.com/cornelous/voss.git
+ ```
+
+ ```bash
+    cd voss
+```
+
+```bash
+    docker build -t currency-converter-image .
+```
+
+```bash
+    docker run -d --name currency-converter-container -p 80:80 currency-converter-image
+```
+
+2. Then Visit app at http://127.0.0.1/ in your browser
 
 ## NB
 This is my very first python and flask, I enjoyed the experience of
