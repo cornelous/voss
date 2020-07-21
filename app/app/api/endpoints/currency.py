@@ -1,6 +1,10 @@
+
+import os
 import requests
 from flask import Flask, make_response, render_template, request, jsonify, json
 from ...main import app
+
+baseAPIURL = os.environ.get("API_URL", default="http://api.openrates.io/")
 
 @app.route("/currencies/")
 def route_currencies():       
@@ -20,7 +24,7 @@ def route_currencies():
     if (base == 'EUR') and (target == 'EUR'):
         return "Conversion from " + base + " to " + base + " is not supported" 
 
-    getZAREquivalent = "http://api.openrates.io/" + "latest?symbols="+ target + "&base=" + base
+    getZAREquivalent = baseAPIURL + "latest?symbols="+ target + "&base=" + base
     ZAREquivalent = requests.get(getZAREquivalent)
     r = ZAREquivalent.json()
 
